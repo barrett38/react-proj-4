@@ -25,6 +25,6 @@ app.post("/login", login);
 app.get("/posts", getAllPosts);
 
 app.get("/userposts/:userId", getCurrentUserPosts);
-app.post("/posts", addPost);
-app.put("/posts/:id", editPost);
-app.delete("/posts/:id", deletePost);
+app.post("/posts", isAuthenticated, addPost);
+app.put("/posts/:id", isAuthenticated, editPost);
+app.delete("/posts/:id", isAuthenticated, deletePost);
