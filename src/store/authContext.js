@@ -45,7 +45,7 @@ const AuthContextProvider = (props) => {
         return initialState;
       case "RETURNING_USER":
         let { token: t, userId: u, exp: e, username: n } = action.payload;
-        return { ...state, token: t, userId: +u, exp: +e, username: n };
+        return { ...state, token: t, userId: u, exp: e, username: n };
       default:
         return state;
     }

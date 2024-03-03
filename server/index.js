@@ -32,9 +32,6 @@ app.post("/posts", isAuthenticated, addPost);
 app.put("/posts/:id", isAuthenticated, editPost);
 app.delete("/posts/:id", isAuthenticated, deletePost);
 
-// the force: true is for development -- it DROPS tables!!!
-// you can use it if you like while you are building.
-// sequelize.sync({ force: true })
 sequelize
   .sync()
   .then(() => {
