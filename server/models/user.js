@@ -1,5 +1,4 @@
 const { DataTypes } = require("sequelize");
-
 const { sequelize } = require("../util/database");
 
 module.exports = {
@@ -12,5 +11,10 @@ module.exports = {
     },
     username: DataTypes.STRING,
     hashedPass: DataTypes.STRING,
+    termsAgreed: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
   }),
 };
