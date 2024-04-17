@@ -17,8 +17,8 @@ const Auth = () => {
         dispatch({ type: "LOGIN", payload: res.data });
       })
       .catch((err) => {
-        if(err.response.data) {
-          alert(err.response.data)
+        if (err.response.data) {
+          alert(err.response.data);
         }
         console.error(err);
       });
@@ -29,8 +29,24 @@ const Auth = () => {
     <main>
       <h1>Welcome!</h1>
       <form className="form auth-form" onSubmit={submitHandler}>
-        <input className="form-input" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-        <input className="form-input" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+        <input
+          className="form-input"
+          placeholder="Username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          className="form-input"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {register && (
+          <div>
+            <input type="checkbox" id="terms" name="terms" required />
+            <label className="agree" htmlFor="terms">
+              I agree to the terms and conditions
+            </label>
+          </div>
+        )}
         <button className="form-btn">{register ? "Sign Up" : "Login"}</button>
       </form>
       <button className="form-btn" onClick={() => setRegister(!register)}>
