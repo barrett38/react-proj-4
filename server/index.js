@@ -40,3 +40,8 @@ sequelize
     );
   })
   .catch((err) => console.log(err));
+
+// Commit ID of correct Code:
+// 2b3b75dc48c03bc26511589b9ab919f71bb40819
+// Run this code if needed:
+// git reset --hard 2b3b75dc48c03bc26511589b9ab919f71bb40819
